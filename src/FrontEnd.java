@@ -90,12 +90,7 @@ public class FrontEnd extends JFrame implements KeyListener {
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        Disclaimer = new JLabel("Disclaimer: Some Users May Experience a dispairity between the text they input and the text they" +
-                " see on the screen. Don't fret. The string you actually enter is the one that is used and it is " +
-                "purely a cosmetic error");
-        Disclaimer.setFont(new Font("Arial", Font.PLAIN, 8));
-        Disclaimer.setAlignmentX(Component.CENTER_ALIGNMENT);
-        mainPanel.add(Disclaimer);
+
 
         //initializes all the class variables
         //sets current text to an empty string
