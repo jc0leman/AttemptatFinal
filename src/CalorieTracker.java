@@ -1,3 +1,5 @@
+//Jackson Coleman Final Project for Mr. Blick CS2
+//"Stretch" goal was to have serving sizes, remanance from this goal can be seen
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,27 +10,33 @@ public class CalorieTracker {
     private ArrayList<Food> foods;
 
     public CalorieTracker() {
+        //injtializes arraylist of foods
         foods = new ArrayList<>();
     }
 
+    //Alloes the code to compile throwing the file not found - we later will check to find the file in the method
     public static void main(String[] args) throws FileNotFoundException {
+        //sets the arraylist to null
         ArrayList<Food> foods = null;
-
         User user = new User("tester");
         try {
+            //tries to run the initialize method
             foods = user.initialize();
-        } catch (IOException e) {
+        } //if error with input/output of expression breaks
+        catch (IOException e) {
             e.printStackTrace();
         }
 
+        //sets the calorie tracker to the current instance and the user and foods
         CalorieTracker calorieTracker = new CalorieTracker();
         calorieTracker.setUser(user);
         calorieTracker.setFoods(foods);
-
+        //calls the front end
         FrontEnd frontEnd = new FrontEnd(foods, calorieTracker);
         frontEnd.setVisible(true);
     }
 
+    //getter setter methods
     public User getUser() {
         return user;
     }
@@ -45,6 +53,7 @@ public class CalorieTracker {
         this.foods = foods;
     }
 
+    //search food by name through the foods arraylist (list of the foods that are in the csv
     public boolean searchFoodByName(String name) {
         for (Food food : foods) {
             if (food.getName().equalsIgnoreCase(name)) {
@@ -54,6 +63,7 @@ public class CalorieTracker {
         }
         return false;
     }
+    //same thing, except this time if a match is found the number of calories are given to the front
     public int getCaloriesByName(String name) {
         for (Food food : foods) {
             if (food.getName().equalsIgnoreCase(name)) {

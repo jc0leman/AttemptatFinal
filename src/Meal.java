@@ -4,6 +4,8 @@ public class Meal {
     private int numCalories;
 
 
+    //Meal class is designed to manage the foods effectively adding another level of abstraction
+    //it contains getter and setter methods
     public Meal(Food foodItem, int numServings) {
         this.foodItem = foodItem;
         this.numServings = numServings;

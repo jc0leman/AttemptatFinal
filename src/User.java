@@ -11,10 +11,15 @@ public class User {
         this.meals = new ArrayList<>();
     }
 
+    //initalize
+    //throws IOexception if there is an issue with the scanner
+    //but the method should be called regardless
     public ArrayList<Food> initialize() throws IOException {
+        //Sets target of the scanner to the ideal file
         Scanner input = new Scanner(new File("Resources/foods.csv"));
         input.nextLine(); // skip header line
         ArrayList<Food> foodsList = new ArrayList<Food>();
+        //until it reaches the end
         while (input.hasNextLine()) {
             String line = input.nextLine();
             String[] fields = line.split(",");
